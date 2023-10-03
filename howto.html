@@ -86,30 +86,8 @@
 
        
 </body>
-<script>document.addEventListener('DOMContentLoaded', function() {
-    const instructions = document.querySelector('.Instructions');
 
-    instructions.addEventListener('wheel', function(e) {
-        // If scrolling down and we're at the bottom of the Instructions section
-        if (e.deltaY > 0 && instructions.scrollHeight - instructions.clientHeight <= instructions.scrollTop + e.deltaY) {
-            e.stopPropagation();  // Let the event bubble up to allow the body to scroll
-        }
-        // If scrolling up and we're at the top of the Instructions section
-        else if (e.deltaY < 0 && instructions.scrollTop + e.deltaY <= 0) {
-            e.stopPropagation();  // Let the event bubble up to allow the body to scroll
-        }
-    });
 
-    instructions.addEventListener('mouseenter', function() {
-        document.body.style.overflow = 'hidden';  // Disable body scroll when hovering over Instructions
-    });
-
-    instructions.addEventListener('mouseleave', function() {
-        document.body.style.overflow = 'auto';  // Enable body scroll when the mouse leaves the Instructions section
-    });
-});
-
-</script>
 
 
 

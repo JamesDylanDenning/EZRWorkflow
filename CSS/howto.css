@@ -101,6 +101,7 @@ html, body {
 
 .Instructions::-webkit-scrollbar {
     width: 10px;
+    display: none;
 }
 
 .Instructions::-webkit-scrollbar-thumb {

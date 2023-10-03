@@ -38,15 +38,29 @@
               <ul>
               <li><a href="#overlayForm" id="addTaskBtn">Add Task</a>
 
-                    <div id="overlayForm" class="overlay">
-                      <a href="#" class="closeBtn">&times;</a>
-                      <form>
-                        <input type="text" id="task-name" placeholder="Task Name">
-                        <input type="text" id="description" placeholder="Description">
-                        <input type="date" id="calendar">
-                        <input type="submit" value="Submit">
-                      </form>
-                    </div></li>
+                <div id="overlayForm" class="overlay">
+                  <div class="form-container">
+                    <a href="#" class="closeBtn"></a> <!-- Moved inside form-container -->
+                    <form id="mainForm">
+                      <input type="text" id="task-name" placeholder="Task Name">
+                      <input type="text" id="description" placeholder="Description">
+                      <input type="date" id="calendar">
+                      <button id="addFieldBtn">+</button> <!-- Moved inside form, between calendar and submit -->
+                      <input type="submit" value="Submit">
+                    </form>
+                  </div>
+                </div>
+                
+                <!-- New Form to Add Field Type -->
+                <div id="addFieldForm" class="overlay">
+                  <div class="form-container">
+                    <a href="#" class="closeBtn"></a>  <!-- Close button -->
+                    <form id="fieldTypeForm">
+                      <input type="text" id="new-field-type" placeholder="Enter Field Type">
+                      <input type="submit" value="Add Field">
+                    </form>
+                  </div>
+                </div></li>
               <li>Teams</li>
               <li>All Tasks</li>
               <li>Settings</li>
@@ -150,6 +164,60 @@
 
 
 
-</body>    
+</body>  
+
+<script>
+mainForm.addEventListener("submit", function(e) {
+  e.preventDefault(); // Prevent default form submission
+
+  // Logic to collect form data and do something
+  const formData = new FormData(mainForm);
+  for (let [key, value] of formData.entries()) {
+    console.log(key, value); // Log each form field key and value
+  }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  // Getting references to elements
+  const addFieldBtn = document.getElementById("addFieldBtn");
+  const mainForm = document.getElementById("mainForm");
+  const fieldTypeForm = document.getElementById("fieldTypeForm");
+
+  // Open the new form to enter field type
+  addFieldBtn.addEventListener("click", function () {
+    document.getElementById("addFieldForm").style.display = "flex";
+  });
+
+  // Close 'Add Field' form when the close button is clicked
+  document.querySelector("#addFieldForm .closeBtn").addEventListener("click", function() {
+    document.getElementById("addFieldForm").style.display = "none";
+  });
+
+  // Add new field to the original form when the fieldTypeForm is submitted
+  fieldTypeForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const newFieldType = document.getElementById("new-field-type").value;
+    const newField = document.createElement("input");
+  
+    // Set properties for the new input field
+    newField.type = "text";
+    newField.placeholder = newFieldType;
+    newField.required = true;  // Making the field required
+
+    // Add styles to the new field (could also add a class name)
+    newField.style.borderRadius = "12px";
+    newField.style.border = "1px solid #ccc";
+    newField.style.padding = "10px";
+    newField.style.margin = "10px 0";
+
+    // Insert the new field before the '+' button
+    mainForm.insertBefore(newField, addFieldBtn);
+
+    // Hide the field type form and clear its input
+    document.getElementById("addFieldForm").style.display = "none";
+    document.getElementById("new-field-type").value = "";
+  });
+});
+
+</script>
 
 </html>

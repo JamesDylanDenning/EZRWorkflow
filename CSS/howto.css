@@ -1,0 +1,195 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+}
+
+header {
+    background-color: #C7F0FF;
+    border-radius: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    margin: 0 auto;
+    margin-top: 15px;
+    max-width: 85%;
+    height: 85px;
+}
+
+header .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+header img {
+    width: 123px;
+    height: 89px;
+}
+
+header h2 {
+    margin-top: -5px;
+    font-size: 20px;
+    color: #0A6686;
+}
+
+header h3{
+    color: #0A6686;
+}
+
+header ul li {
+    background-color: #0A6686;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    list-style-type: none;
+}
+   
+
+
+
+header a:hover {
+    color: #C7F0FF;  /* Change color on hover */
+    text-decoration: none;  /* Add underline on hover */
+}
+
+header ul :hover{
+    background-color: white;
+    color: #0A6686;
+}
+
+
+
+.Instructions {
+    height: calc(90vh - 150px);
+    overflow-y: auto;
+    padding: 20px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.Instructions h1{
+    color: #0A6686;
+    padding-bottom: 1px;
+    padding-top: 10px;
+    
+}
+.Instructions h2 {
+    text-indent: 20px;
+    color: #0A6686;
+
+}
+
+.Instructions p,.Instructions li,  .Instructions a {
+    color: #2596BE;
+    text-indent: 40px;  /* Added this line */
+    
+}
+.Instructions li{
+    text-indent: auto;
+}
+
+
+body::-webkit-scrollbar, html::-webkit-scrollbar {
+    display: none;
+}
+
+html, body {
+    height: 100%;
+    overflow: auto;
+}
+
+.Instructions::-webkit-scrollbar {
+    width: 10px;
+}
+
+.Instructions::-webkit-scrollbar-thumb {
+    background-color: #0A6686;
+    border-radius: 4px;
+}
+
+.Instructions::-webkit-scrollbar-thumb:hover {
+    background-color: #2596BE;
+}
+
+.Instructions::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
+
+.FAQ {
+    padding-right: 100%;
+    background-color: #2596BE;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, rgba(37, 150, 190, 0) 0%, #C7F0FF 40px, #C7F0FF 40px);
+}
+
+.FAQ h1 {
+    color:#0A6686;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 100%; 
+}
+
+.FAQ .q1, .FAQ .q2 {
+    background-color: white;
+    width: 45%;
+    padding: 20px;
+    color: #0A6686;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-radius: 10px;
+    border: 7px outset #0A6686;
+    margin: 0 2.5%;  /* Added horizontal margins */
+margin-bottom: 10px;
+    
+}
+
+
+
+
+
+.FAQ div  h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.FAQ div  hr {
+    border: none;
+    height: 2px;
+    background-color: #0A6686;
+    margin: 0;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.FAQ div  p {
+    font-size: 16px;
+    margin-top: 20px;
+    color:#0A6686;
+}
+
+.FAQ, .Video-Tutorials {
+    padding: 20px;
+}
+.Video-Tutorials {
+    height: 40vh;
+    background-color: #0A6686;  /* Blue background */
+    color: #ffffff;  /* White text */
+    width: 100%;  /* Full width */
+    padding: 20px 0;  /* Vertical padding, zero horizontal padding */
+    text-align: center;  /* Center the text */
+}
+
+.Video-Tutorials h1 {
+    margin: 0;  /* Remove default margins */
+    padding: 0;  /* Remove default padding */
+    font-size: 24px;  /* Set font size */
+}

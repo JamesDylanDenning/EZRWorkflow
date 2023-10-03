@@ -1,0 +1,336 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+ 
+  
+  /* Header Styles (kept the same as provided) */
+  header {
+    background-color: #C7F0FF;
+    border-radius: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    margin: 0 auto;
+    margin-top: 15px;
+    max-width: 85%;
+    width: 100%;
+    height: 85px;
+  }
+  
+  header .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  header img {
+    width: 123px;
+    height: 89px;
+  }
+  
+  header h2 {
+    margin-top: -5px;
+    font-size: 20px;
+    color: #0A6686;
+  }
+  header h3{
+    color: #0A6686;
+  }
+  
+  header ul li {
+    background-color: #0A6686;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    list-style-type: none;
+  }
+  
+  /* Main Dashboard Styles */
+ /* Main Dashboard Styles */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 15px 50px;
+    border: 3px solid #2596BE;
+    border-radius: 10px;
+    box-sizing: border-box;
+    min-height: calc(100vh - 30px);  /* 100% of the viewport height minus 30px for top and bottom margins */
+    max-width: calc(100vw - 100px);  /* 100% of the viewport width minus 100px for left and right margins */
+    overflow-y: auto;
+  }
+  
+  /* Grid Container */
+  .grid-container {
+    flex: 1;  /* NEW: Make it take up all available space */
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: auto;
+    width: 100%;  /* Full width */
+  }
+  
+  
+
+.tasksandreminders {
+
+    margin-bottom: 20px;  /* Add space below this div */
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content:  space-between;  /* Changes from space-between to space-evenly */
+    align-items: center;  /* Vertically center-align the content */
+    
+    box-shadow: 3px 3px 10px 10px rgba(238, 251, 255, 1); /* x-offset, y-offset, blur-radius, spread-radius, color */
+    background-color: #EEFBFF;  /* Add background color */
+    border-radius: 10px;  /* Make it a rounded rectangle */
+    box-sizing: border-box;  /* Ensure that padding is included in total dimensions */
+    position: relative;  /* Relative positioning for the pseudo-element */
+  }
+  
+  .tasksandreminders::before {
+    content: "";
+    position: absolute;  /* Absolute positioning */
+    height: calc(100% - 20px);  /* Height of the vertical line, adjusted for some padding */
+    width: 2px;  /* Width of the vertical line */
+    background-color: #0A6686;  /* Color of the vertical line */
+    top: 10px;  /* Position from the top */
+    left: calc(50% + 10px);  /* Center the line with an additional 10px offset */
+    transform: translateX(-50%);  /* Necessary for true centering */
+}
+
+
+
+
+/* Task and Reminders Components */
+.tasks, .remindersbg {
+    width: calc(50% - 20px);  /* Take up half the width minus some padding */
+    text-align: center;  /* Center text */
+}
+  
+  
+
+  
+
+  
+  .info h2 {
+    color: #2596BE;
+  }
+
+ /* Existing styles */
+.tasks ul li {
+  background-color: #2596BE;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 15px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tasks .task-buttons ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Explicitly define two columns */
+  grid-template-rows: 1fr 1fr; /* Explicitly define two rows */
+  gap: 10px;
+  justify-items: stretch; /* Stretch items to fill the grid cell */
+  align-items: stretch;
+}
+
+  
+  /* Overlay Form */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+  
+.overlay:target {
+    display: flex;
+  }
+  
+.overlay form {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+.closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+  }
+
+
+  .tasks h2, .reminderstitle h2 {
+    font-size: 24px; /* Larger text */
+    font-weight: bold; /* Bold text */
+    margin-bottom: 10px; /* Spacing below the title */
+    color: #2596BE; /* Dominant color */
+  }
+
+
+
+/* ... Existing CSS ... */
+.alignreminders {
+  margin-left: 10%;  /* Automatic margin on the left */
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(50% - 20px); /* Use calc to calculate the width */
+  max-width: 40% ;
+}
+
+.remindersbg {
+  background-color: #0a6686;
+  color: #eefbff;
+  padding: auto;
+  border-radius: 10px;
+  width: 100%;
+  height: 200px;  /* Fixed height */
+  overflow-y: auto;  /* Enable vertical scrolling */
+}
+
+/* Media Query for smaller screen sizes */
+@media screen and (max-width: 768px) {
+  .alignreminders {
+    width: calc(50% - 20px); /* Take up half the width of the parent, minus some padding */
+    margin-right: 0; /* Remove the right margin */
+  }
+  
+  .remindersbg {
+    padding: 10px; /* Reduce the padding */
+  }
+}
+
+
+
+/* List of reminders */
+.reminders ul {
+  list-style-type: none; /* No bullet points */
+  padding: 0; /* No padding */
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.reminders ul li {
+  color:#0A6686;
+  padding: 10px; /* Padding around each reminder */
+  margin: 5px 0; /* Margin between reminders */
+  border-radius: 5px; /* Slightly rounded corners for each reminder */
+  background-color: #C7F0FF; /* Light background for each reminder */
+}
+.remindersbg::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+.remindersbg::-webkit-scrollbar-thumb {
+  background-color: #0A6686; /* Color of the slider */
+  border: 2px solid white; /* White border */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.remindersbg::-webkit-scrollbar-track {
+  background-color: #EEFBFF; /* Color of the track */
+  border: 1px solid #0A6686; /* Border for the track */
+}
+
+/* For Firefox */
+/* Note: Firefox does not currently support border styling on the scrollbar */
+.remindersbg {
+  scrollbar-color: #0A6686 #C7F0FF; /* thumb and track color */
+}
+
+
+
+
+
+  
+
+  
+.infoandcalendar {
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;  /* Make it a rounded rectangle */
+    box-sizing: border-box;  /* Ensure that padding is included in total dimensions */
+  }
+  
+  .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: flex-start; /* Keep content aligned to the top */
+    text-align: center; /* Center the text within each flex item */
+}
+.info h2, .info p {
+    margin-top: 10px; /* Adjust this value as needed */
+    margin-bottom: 5px; /* Adjust this value as needed */
+}
+
+
+  .calendar {
+    width: 100%;
+    margin: 10px 0;
+    border: 2px solid #0A6686;
+    border-radius: 10px;
+    box-sizing: border-box;
+  flex: 1;
+  }
+  
+  .calendar-header {
+    text-align: center;
+    background-color: #0A6686;
+    color: #ffffff;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+.day-name{
+  color: #0A6686;
+}
+  
+  .day-name,
+  .day-number {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #0A6686;
+    box-sizing: border-box;
+  }
+  
+  .day-number {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #2596BE;
+  }
+  
+  .day-number:hover {
+    background-color: #C7F0FF;
+  }
+ 
+  

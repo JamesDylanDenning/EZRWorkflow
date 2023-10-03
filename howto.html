@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How-To</title>
+    <meta name="author" content="James Dylan Denning">
+    <meta name="description" content="How-To guide and Frequently asks questions for the EZR Workflow Task management webapp!">
+<link rel="stylesheet" href="CSS/howto.css">
+</head>
+
+<body id = "howto">
+    <header>
+        <div class="logo-container">
+            <a href="index.html"><img src="Images/Logo.png" width="136" height="99" alt="Logo" ></a>
+            <h2>EZR Workflow</h2>
+        </div>
+        <h3>How-To</h3>
+        <a href="index.html"><ul>
+            <li>My Profile</li>
+        </ul></a>
+    </header>
+        <section class="Instructions">
+
+            <h1><U>Getting Started: The Homepage</U></h1>
+            <p>Open your web browser and go to the EZR Workflow website.</p>
+        
+            <h2>Sign In or Sign Up:</h2>
+            <p>Existing Users: Click on the 'Sign In' button and enter your credentials.</p>
+            <p>New Users: Click on the 'Get Started' or 'Sign Up' button to create a new account.</p>
+            
+            <h2>Explore:</h2>
+            <p>Take a moment to explore the homepage and get familiar with the introductory content and features highlighted.</p>
+        
+            <h1><u>Navigating Your Dashboard</u></h1>
+            
+            <h2>Access the Dashboard:</h2>
+            <p>Once logged in, you'll be directed to your Dashboard. This is your control center for managing tasks and schedules.</p>
+            
+            <h2>Task Summary:</h2>
+            <p>Get a quick overview of your upcoming tasks in the 'Snapshot' section.</p>
+        
+            <h2>Mini-Calendar:</h2>
+            <p>Use the mini-calendar to see your tasks for the week.</p>
+        
+            <h2>Quick Links:</h2>
+            <p>Utilize quick links to create a new task, view all tasks, or set reminders.</p>
+        
+            <h2>Team Updates:</h2>
+            <p>If you're part of a team, check this section for collaborative tasks or team updates.</p>
+        
+            <h1><u>Creating Tasks: The Task Entry Form</u></h1>
+        
+            <h2>Go to Create Task:</h2>
+            <p>From your Dashboard, click on the ‘Add Task' link or button.</p>
+        
+            <h2>Fill in the Form:</h2>
+            
+                <p>Select when the task needs to be completed.</p>
+                <p>Provide details about the task.</p>
+           
+        
+        </section>
+
+        <section class = "FAQ">
+            <h1>Frequnetly Asked Questions</h1>
+
+            <div class = "q1">
+                <h2>Ornare massa eget purus viverra accumsan?</h2>
+                <hr>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices vitae auctor eu augue ut. Donec massa sapien faucibus et molestie ac feugiat. Rhoncus urna neque viverra justo nec ultrices.</p>
+            </div>
+            <div class = "q2">
+                <h2>Eu ultrices vitae auctor?</h2>
+                <hr>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices vitae auctor eu augue ut.</p>
+
+            </div>
+
+        </section>
+
+        <section class = "Video-Tutorials">
+            <h1>Video Tutorials</h1>
+        </section>
+
+       
+</body>
+<script>document.addEventListener('DOMContentLoaded', function() {
+    const instructions = document.querySelector('.Instructions');
+
+    instructions.addEventListener('wheel', function(e) {
+        // If scrolling down and we're at the bottom of the Instructions section
+        if (e.deltaY > 0 && instructions.scrollHeight - instructions.clientHeight <= instructions.scrollTop + e.deltaY) {
+            e.stopPropagation();  // Let the event bubble up to allow the body to scroll
+        }
+        // If scrolling up and we're at the top of the Instructions section
+        else if (e.deltaY < 0 && instructions.scrollTop + e.deltaY <= 0) {
+            e.stopPropagation();  // Let the event bubble up to allow the body to scroll
+        }
+    });
+
+    instructions.addEventListener('mouseenter', function() {
+        document.body.style.overflow = 'hidden';  // Disable body scroll when hovering over Instructions
+    });
+
+    instructions.addEventListener('mouseleave', function() {
+        document.body.style.overflow = 'auto';  // Enable body scroll when the mouse leaves the Instructions section
+    });
+});
+
+</script>
+
+
+
+</html>

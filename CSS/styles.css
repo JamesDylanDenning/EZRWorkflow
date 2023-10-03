@@ -141,3 +141,58 @@ footer {
     border-radius: 5px;  /* Rounded corners */
   }
 
+  /* Existing CSS ... */
+
+/* Media Queries for Mobile Responsiveness */
+@media only screen and (max-width: 768px) {
+  /* Header Styles for Mobile */
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    height: auto;
+  }
+
+  header .logo-container {
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  header ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header ul li:first-child {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  /* Homepage Styles for Mobile */
+  .Homepage h1 {
+    font-size: 36px;
+  }
+
+  .Homepage p {
+    font-size: 18px;
+    max-width: calc(100% - 30px);
+    padding: 0 15px;
+  }
+
+  /* Footer Styles for Mobile */
+  footer {
+    width: calc(100% - 30px);
+    padding: 0 15px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  footer a {
+    margin-bottom: 10px;
+  }
+}
+
+

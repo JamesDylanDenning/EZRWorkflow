@@ -332,5 +332,78 @@ body, html {
   .day-number:hover {
     background-color: #C7F0FF;
   }
+
+  @media only screen and (max-width: 768px) {
+    /* Override header styles */
+    header {
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+      height: auto;
+    }
+  
+    /* Scale down logo */
+    header img {
+      width: 80px;
+      height: 60px;
+    }
+  
+    /* Reduce text size */
+    header h2, header h3 {
+      font-size: 16px;
+    }
+  
+    /* Smaller buttons */
+    header ul li {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  
+    /* Main Dashboard Container */
+    .dashboard {
+      padding: 10px;
+    }
+  
+    /* Grid Container */
+    .grid-container {
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr;
+    }
+  
+    /* Tasks and Reminders */
+    .tasksandreminders, .infoandcalendar {
+      grid-row: auto;
+      grid-column: auto;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    /* Tasks and Reminders Components */
+    .tasks, .remindersbg, .info, .calendar {
+      width: 100%;
+    }
+  
+    /* Align Reminders */
+    .alignreminders {
+      width: 100%;
+    }
+  
+    /* Calendar */
+    .calendar {
+      width: 100%;
+    }
+    .tasks .task-buttons ul {
+      grid-template-columns: 1fr;  /* One column */
+      grid-template-rows: auto;  /* Auto rows */
+    }
+  
+    /* Hide the vertical line in tasksandreminders */
+    .tasksandreminders::before {
+      display: none;
+    }
+  }
+
+  
+  
  
   

@@ -87,9 +87,7 @@ header ul :hover{
     text-indent: 40px;  /* Added this line */
     
 }
-.Instructions li{
-    text-indent: auto;
-}
+
 
 
 body::-webkit-scrollbar, html::-webkit-scrollbar {
@@ -193,3 +191,32 @@ margin-bottom: 10px;
     padding: 0;  /* Remove default padding */
     font-size: 24px;  /* Set font size */
 }
+
+/* Existing CSS ... */
+
+/* Mobile Responsiveness */
+@media only screen and (max-width: 768px) {
+    /* Header adjustments */
+    header h3 {
+      font-size: 16px;
+    }
+  
+    /* Make text smaller */
+    body {
+      font-size: 14px;
+    }
+  
+    header h2, .Instructions h1, .Instructions h2, .FAQ h1, .FAQ h2, .Video-Tutorials h1 {
+      font-size: 1.2em; /* Adjust according to your preference */
+    }
+  
+    .Instructions p, .FAQ p {
+      font-size: 1em; /* Adjust according to your preference */
+    }
+  
+    /* Layout adjustments for q1 and q2 boxes */
+    .FAQ .q1, .FAQ .q2 {
+      display: block; /* Stacks them top to bottom */
+    }
+  }
+  

@@ -63,7 +63,7 @@ header ul :hover{
 
 
 .Instructions {
-    height: calc(90vh - 150px);
+    height: calc(70vh - 150px);
     overflow-y: auto;
     padding: 20px;
     margin-left: 15%;

@@ -1,0 +1,532 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Header Styles in styles.css*/
+  
+  
+ /* Main Dashboard Styles */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 15px 50px;
+    border: 3px solid #2596BE;
+    border-radius: 10px;
+    box-sizing: border-box;
+    min-height: calc(100vh - 30px); 
+    max-width: calc(100vw - 100px);  
+    overflow-y: auto;
+  }
+  
+  /* Grid Container */
+  .grid-container {
+    flex: 1;  
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    width: 100%; 
+  }
+  
+  
+
+.tasksandreminders {
+
+    margin-bottom: 20px;  
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content:  space-between; 
+    align-items: center;  
+    
+    box-shadow: 3px 3px 10px 10px rgba(238, 251, 255, 1);
+    background-color: #EEFBFF;  
+    border-radius: 10px;  
+    box-sizing: border-box; 
+    position: relative; 
+  }
+  
+  .tasksandreminders::before {
+    content: "";
+    position: absolute;  
+    height: calc(100% - 20px);  
+    width: 2px;  
+    background-color: #0A6686;  
+    top: 10px;  
+    left: calc(50% + 10px);  
+}
+
+
+
+
+/* Task and Reminders Components */
+.tasks, .remindersbg {
+    width: calc(50% - 20px);  
+    text-align: center; 
+}
+  
+  
+  .info h2 {
+    color: #2596BE;
+  }
+
+
+.tasks ul li {
+  background-color: #2596BE;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 15px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tasks ul li a{
+  color: white;
+  text-decoration: none;
+}
+
+.tasks .task-buttons ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr; 
+  gap: 10px;
+  justify-items: stretch; 
+  align-items: stretch;
+}
+
+
+.tasks input[type="text"]:focus {
+  border-color: #2596BE;
+  outline: none; 
+}
+.tasks input[type="date"]:focus {
+  border-color: #2596BE;
+  outline: none; 
+}
+
+  
+  /* Overlay Form */
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(213, 247, 255, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  .overlay:target {
+    display: flex;
+  }
+  .overlay form {
+    background: white;
+    padding: 100px;
+    border-radius: 20px;
+    border: 5px solid #0A6686;
+    display: flex;           
+    flex-direction: column;  
+    align-items: center;     
+    justify-content: center;
+  }
+  
+  /* Styles for input fields*/
+  .overlay form input[type="text"],
+  .overlay form input[type="date"],
+  .overlay form input[type="submit"]
+  {
+    border-radius: 12px;
+    border: 1px solid #0A6686;
+    padding: 20px;
+    margin: 10px 0;  
+    width: 100%;    
+    max-width: 300px; 
+  }
+
+  
+  
+
+ 
+
+  #addFieldBtn {
+    font-size: 24px;
+    cursor: pointer;
+    margin: 10px 0; 
+    color: #0A6686;
+    border-radius: 50%; 
+    border: 2px solid #0A6686; 
+    width: 30px; 
+    height: 30px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; 
+  }
+  
+  #addFieldBtn:hover {
+    border-color: #ffffff; 
+    background-color: #0A6686; 
+    color: #ffffff; 
+  }
+  
+
+  #addFieldBtn::after {
+    content: "Add Field";
+    position: absolute;
+    bottom: 100%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    background-color:white;
+    color: #2596BE;
+    font-size: large;
+    padding: 5px;
+    border-radius: 3px;
+    white-space: nowrap; 
+    opacity: 0; 
+    pointer-events: none; 
+    transition: opacity 0.6s ease; 
+  }
+  
+  #addFieldBtn:hover::after {
+    opacity: 1; 
+  }
+
+  
+
+  .overlay form input[type="submit"] {
+    background-color: #2596BE; 
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  #addFieldForm {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(213, 247, 255, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 2; 
+  }
+  
+  #addFieldForm:target {
+    display: flex;
+  }
+  
+  #addFieldForm form {
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    border: 2px solid #ccc;
+  }
+  
+  #addFieldForm input[type="text"],
+  #addFieldForm input[type="submit"] {
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+  }
+  
+  #addFieldForm input[type="submit"] {
+    background-color: #2596BE ;
+    color: white;
+    cursor: pointer;
+  }
+
+  .form-container {
+    position: relative;
+  }
+  
+
+  
+  .closeBtn {
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    border-radius: 50%;  
+    background-color: #0A6686;
+    padding: 1px;
+    color: #C7F0FF;
+    text-decoration: none;
+    width: 30px;
+    height: 30px;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 30px; 
+  }
+  .closeBtn::after {
+    content: "×";
+    position: relative;
+    top: -2px; 
+  }
+  
+
+
+
+
+
+
+
+  .tasks h2, .reminderstitle h2 {
+    font-size: 24px; 
+    font-weight: bold; 
+    margin-bottom: 10px; 
+    color: #2596BE; 
+  }
+
+
+
+
+.alignreminders {
+  margin-left: 10%;  
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(50% - 20px); 
+  max-width: 40% ;
+}
+
+.remindersbg {
+  background-color: #0a6686;
+  color: #eefbff;
+  border-radius: 10px;
+  width: 100%;
+  height: 200px;  
+  overflow-y: auto;  
+}
+
+/* Media Query for smaller screen sizes */
+@media screen and (max-width: 768px) {
+  .alignreminders {
+    width: calc(50% - 20px); 
+    margin-right: 0; 
+  }
+  
+  .remindersbg {
+    padding: 10px; 
+  }
+}
+
+
+
+/* List of reminders */
+.reminders ul {
+  list-style-type: none; 
+  padding: 0; 
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.reminders ul li {
+  color:#0A6686;
+  padding: 10px; 
+  margin: 5px 0;
+  border-radius: 5px; 
+  background-color: #C7F0FF; 
+}
+.remindersbg::-webkit-scrollbar {
+  width: 12px; 
+}
+
+.remindersbg::-webkit-scrollbar-thumb {
+  background-color: #0A6686; 
+  border: 2px solid white; 
+  border-radius: 10px;
+}
+
+.remindersbg::-webkit-scrollbar-track {
+  background-color: #EEFBFF; 
+  border: 1px solid #0A6686; 
+}
+
+
+.remindersbg {
+  scrollbar-color: #0A6686 #C7F0FF; 
+}
+
+
+
+
+
+  
+
+  
+.infoandcalendar {
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;  
+    box-sizing: border-box;  
+  }
+  
+  .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start;
+    text-align: center; 
+}
+.info h2, .info p {
+    margin-top: 10px; 
+    margin-bottom: 5px; 
+}
+
+
+  .calendar {
+    width: 100%;
+    margin: 10px 0;
+    border: 2px solid #0A6686;
+    border-radius: 10px;
+    box-sizing: border-box;
+  flex: 1;
+  }
+  
+  .calendar-header {
+    text-align: center;
+    background-color: #0A6686;
+    color: #ffffff;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+.day-name{
+  color: #0A6686;
+}
+  
+  .day-name,
+  .day-number {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #0A6686;
+    box-sizing: border-box;
+  }
+  
+  .day-number {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #2596BE;
+  }
+  
+  .day-number:hover {
+    background-color: #C7F0FF;
+  }
+
+  @media only screen and (max-width: 768px) {
+
+    header {
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+      height: auto;
+    }
+  
+
+    header img {
+      width: 80px;
+      height: 60px;
+    }
+  
+
+    header h2, header h3 {
+      font-size: 16px;
+    }
+  
+
+    header ul li {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  
+
+    .dashboard {
+      padding: 10px;
+    }
+  
+ 
+    .grid-container {
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr;
+    }
+  
+
+    .tasksandreminders, .infoandcalendar {
+      grid-row: auto;
+      grid-column: auto;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+
+    .tasks, .remindersbg, .info, .calendar {
+      width: 100%;
+    }
+  
+
+   
+    .reminders ul {
+      list-style-type: none; 
+    }
+    
+    .reminders ul li {
+      color:#0A6686;
+      padding: 10px; 
+      margin: 5px 0; 
+      border-radius: 5px; 
+      background-color: #C7F0FF; 
+    }
+    .alignreminders{
+      align-self: center;
+    }
+
+  
+
+    .calendar {
+      width: 100%;
+    }
+    .tasks .task-buttons ul {
+      grid-template-columns: 1fr;  
+      grid-template-rows: auto;  
+    }
+  
+    /* Hide the vertical line in tasksandreminders */
+    .tasksandreminders::before {
+      display: none;
+    }
+  }
+
+  
+  
+ 
+  

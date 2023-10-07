@@ -65,7 +65,7 @@
                 <!-- New Form to Add Field Type -->
                 <div id="addFieldForm" class="overlay">
                   <div class="form-container">
-                    <a href="#" class="closeBtn"></a>  <!-- Close button -->
+                    <a href="#" class="closeBtn"></a>  
                     <form id="fieldTypeForm">
                       <input type="text" id="new-field-type" placeholder="Enter Field Type">
                       <input type="submit" value="Add Field">
@@ -85,7 +85,7 @@
             <h2>Reminders</h2>
           </div>
 
-          <div class="remindersbg"> <!-- Corrected class name -->
+          <div class="remindersbg"> 
             
         
             <div class = "reminders">
@@ -134,10 +134,9 @@
               <div class="day-name">Thu</div>
               <div class="day-name">Fri</div>
               <div class="day-name">Sat</div>
-              <!-- Dates go here -->
+              <!-- Dates -->
               <div class="day-number">1</div>
               <div class="day-number">2</div>
-              <!-- ... -->
               <div class="day-number">3</div>
               <div class="day-number">4</div>
               <div class="day-number">5</div>
@@ -166,7 +165,6 @@
               <div class="day-number">27</div>
               <div class="day-number">28</div>
               <div class="day-number">29</div>
-
               <div class="day-number">30</div>
               <div class="day-number">31</div>
             </div>
@@ -177,61 +175,64 @@
     </main>
 
 
-
+    <script>
+      mainForm.addEventListener("submit", function(e) {
+        e.preventDefault(); // Prevent default form submission
+      
+        // Logic to collect form data and do something
+        const formData = new FormData(mainForm);
+        for (let [key, value] of formData.entries()) {
+          console.log(key, value); // Log each form field key and value
+        }
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        // Getting references to elements
+        const addFieldBtn = document.getElementById("addFieldBtn");
+        const mainForm = document.getElementById("mainForm");
+        const fieldTypeForm = document.getElementById("fieldTypeForm");
+      
+        // Open the new form to enter field type
+        addFieldBtn.addEventListener("click", function () {
+          document.getElementById("addFieldForm").style.display = "flex";
+        });
+      
+        // Close 'Add Field' form when the close button is clicked
+        document.querySelector("#addFieldForm .closeBtn").addEventListener("click", function() {
+          document.getElementById("addFieldForm").style.display = "none";
+        });
+      
+        // Add new field to the original form when the fieldTypeForm is submitted
+        fieldTypeForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const newFieldType = document.getElementById("new-field-type").value;
+          const newField = document.createElement("input");
+        
+          // Set properties for the new input field
+          newField.type = "text";
+          newField.placeholder = newFieldType;
+          newField.required = true;  // Making the field required
+      
+          // Add styles to the new field (could also add a class name)
+          newField.style.borderRadius = "12px";
+          newField.style.border = "1px solid #ccc";
+          newField.style.padding = "10px";
+          newField.style.margin = "10px 0";
+      
+          // Insert the new field before the '+' button
+          mainForm.insertBefore(newField, addFieldBtn);
+      
+          // Hide the field type form and clear its input
+          document.getElementById("addFieldForm").style.display = "none";
+          document.getElementById("new-field-type").value = "";
+        });
+      });
+      
+      
+      
+      
+      </script>
 </body>  
 
-<script>
-mainForm.addEventListener("submit", function(e) {
-  e.preventDefault(); // Prevent default form submission
 
-  // Logic to collect form data and do something
-  const formData = new FormData(mainForm);
-  for (let [key, value] of formData.entries()) {
-    console.log(key, value); // Log each form field key and value
-  }
-});
-document.addEventListener("DOMContentLoaded", function () {
-  // Getting references to elements
-  const addFieldBtn = document.getElementById("addFieldBtn");
-  const mainForm = document.getElementById("mainForm");
-  const fieldTypeForm = document.getElementById("fieldTypeForm");
-
-  // Open the new form to enter field type
-  addFieldBtn.addEventListener("click", function () {
-    document.getElementById("addFieldForm").style.display = "flex";
-  });
-
-  // Close 'Add Field' form when the close button is clicked
-  document.querySelector("#addFieldForm .closeBtn").addEventListener("click", function() {
-    document.getElementById("addFieldForm").style.display = "none";
-  });
-
-  // Add new field to the original form when the fieldTypeForm is submitted
-  fieldTypeForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const newFieldType = document.getElementById("new-field-type").value;
-    const newField = document.createElement("input");
-  
-    // Set properties for the new input field
-    newField.type = "text";
-    newField.placeholder = newFieldType;
-    newField.required = true;  // Making the field required
-
-    // Add styles to the new field (could also add a class name)
-    newField.style.borderRadius = "12px";
-    newField.style.border = "1px solid #ccc";
-    newField.style.padding = "10px";
-    newField.style.margin = "10px 0";
-
-    // Insert the new field before the '+' button
-    mainForm.insertBefore(newField, addFieldBtn);
-
-    // Hide the field type form and clear its input
-    document.getElementById("addFieldForm").style.display = "none";
-    document.getElementById("new-field-type").value = "";
-  });
-});
-
-</script>
 
 </html>

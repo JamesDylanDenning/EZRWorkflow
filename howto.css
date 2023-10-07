@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+}
+
+.Instructions {
+    height: calc(70vh - 150px);
+    overflow-y: auto;
+    padding: 20px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.Instructions h1{
+    color: #0A6686;
+    padding-bottom: 1px;
+    padding-top: 10px;
+    
+}
+.Instructions h2 {
+    text-indent: 20px;
+    color: #0A6686;
+
+}
+
+.Instructions p,.Instructions li,  .Instructions a {
+    color: #2596BE;
+    text-indent: 40px;  
+    
+}
+
+body::-webkit-scrollbar, html::-webkit-scrollbar {
+    display: none;
+}
+
+html, body {
+    height: 100%;
+    overflow: auto;
+}
+
+.Instructions::-webkit-scrollbar {
+    width: 10px;
+    display: none;
+}
+
+.FAQ {
+    padding-right: 100%;
+    background-color: #2596BE;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, rgba(37, 150, 190, 0) 0%, #C7F0FF 40px, #C7F0FF 40px);
+}
+
+.FAQ h1 {
+    color:#0A6686;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 100%;
+   
+}
+
+.FAQ .q1, .FAQ .q2 {
+    background-color: white;
+    width: 45%;
+    padding: 20px;
+    color: #0A6686;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-radius: 10px;
+    border: 7px outset #0A6686;
+    margin: 0 2.5%; 
+    margin-bottom: 10px;
+    
+}
+
+.FAQ div  h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.FAQ div  hr {
+    border: none;
+    height: 2px;
+    background-color: #0A6686;
+    margin: 0;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.FAQ div  p {
+    font-size: 16px;
+    margin-top: 20px;
+    color:#0A6686;
+}
+
+.FAQ, .Video-Tutorials {
+    padding: 20px;
+}
+
+.Video-Tutorials {
+    height: 40vh;
+    background-color: #0A6686; 
+    color: #ffffff;  
+    width: 100%; 
+    padding: 20px 0;  
+    text-align: center; 
+}
+
+.Video-Tutorials h1 {
+    margin: 0;  
+    padding: 0; 
+    font-size: 24px;  
+}
+
+
+/* Mobile  */
+@media only screen and (max-width: 768px) {
+    
+    header h3 {
+      font-size: 16px;
+    }
+  
+  
+    body {
+      font-size: 14px;
+    }
+  
+    header h2, .Instructions h1, .Instructions h2, .FAQ h1, .FAQ h2, .Video-Tutorials h1 {
+      font-size: 1.2em; 
+    }
+  
+    .Instructions p, .FAQ p {
+      font-size: 1em;
+    }
+  
+    
+    .FAQ .q1, .FAQ .q2 {
+      display: block; 
+    }
+  }
+  

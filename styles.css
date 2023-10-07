@@ -1,0 +1,200 @@
+/* General Styles */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Set the default font */
+}
+
+
+#homepage {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #homepage header, 
+  #homepage .Homepage, 
+  #homepage footer {
+    flex-shrink: 0;  
+  }
+  
+
+
+
+header {
+    background-color: #C7F0FF;
+    border-radius: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;  
+    margin: 0 auto;
+    margin-top: 15px;
+    max-width: 85%;  
+    width: 100%;
+    height: 85px;
+  }
+  
+  
+  /* Logo and Title Alignment */
+  header .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  header img {
+    width: 123px;
+    height: 89px;
+  }
+  
+  header h2 {
+    margin-top: -5px;
+    font-size: 20px;
+    color:#0A6686;
+  }
+  
+  /* Buttons */
+  header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  header ul li {
+    background-color: #0A6686;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  header ul li:first-child {
+    margin-right: 10px;  
+  }
+
+  header ul li a{
+    text-decoration: none;
+    color: white;
+  }
+  
+
+/* Homepage Section */
+.Homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; 
+  }
+  
+  .Homepage h1 {
+    color: #0A6686;
+    font-size: 54px;
+    text-align: center;
+    margin-bottom: 10px; 
+  }
+  
+  .Homepage p {
+    color: #2596BE;
+    font-size: 20px;
+    max-width: calc(100% - 370px); 
+    text-align: center;
+    margin-top: 0;  
+  }
+  .Homepage p strong {
+    color: #0A6686;
+  }
+
+/* Footer Styles */
+footer {
+    width: calc(100% - 258px); 
+    margin: 0 auto;
+  }
+  
+  footer hr {
+    border: 2px solid #0A6686; 
+    margin-bottom: 20px;
+
+  }
+  
+  .footer-links {
+    font: bold;
+    margin-bottom: 20px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  footer a {
+    text-decoration: none;
+    color: #0A6686; 
+    padding: 5px 5px;  
+    display: inline-block; 
+  }
+  
+  
+  footer a:hover {
+    background-color: #C7F0FF;  
+    color: #2596BE;  
+    border-radius: 5px;  
+  }
+
+  
+
+/* Mobile*/
+@media only screen and (max-width: 768px) {
+ 
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    height: auto;
+  }
+
+  header .logo-container {
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  header ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header ul li:first-child {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  
+  .Homepage h1 {
+    font-size: 36px;
+  }
+
+  .Homepage p {
+    font-size: 18px;
+    max-width: calc(100% - 30px);
+    padding: 0 15px;
+  }
+
+  
+  footer {
+    width: calc(100% - 30px);
+    padding: 0 15px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  footer a {
+    margin-bottom: 10px;
+  }
+}
+
+

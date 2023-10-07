@@ -16,23 +16,22 @@ body, html {
   #homepage header, 
   #homepage .Homepage, 
   #homepage footer {
-    flex-shrink: 0;  /* Prevents shrinking */
+    flex-shrink: 0;  
   }
   
 
 
-  /* Header Styles */
- /* Header Styles */
+
 header {
     background-color: #C7F0FF;
     border-radius: 75px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;  /* Internal padding on both sides */
+    padding: 20px 5%;  
     margin: 0 auto;
     margin-top: 15px;
-    max-width: 85%;  /* Adjusts the maximum width */
+    max-width: 85%;  
     width: 100%;
     height: 85px;
   }
@@ -72,48 +71,56 @@ header {
     border-radius: 15px;
     cursor: pointer;
   }
-  header ul li:first-child {
-    margin-right: 10px;  /* Adds extra space to the right of the first button */
+
+  header ul li a{
+    background-color: #0A6686;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
   }
+
+  header ul li:first-child {
+    margin-right: 10px;  
+  }
+
+
   
-  /* Homepage Section */
+
 /* Homepage Section */
 .Homepage {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-grow: 1;  /* Allows this section to take up remaining space */
+    flex-grow: 1; 
   }
   
   .Homepage h1 {
     color: #0A6686;
     font-size: 54px;
     text-align: center;
-    margin-bottom: 10px;  /* Reduced margin to bring it closer to the paragraph */
+    margin-bottom: 10px; 
   }
   
   .Homepage p {
     color: #2596BE;
     font-size: 20px;
-    max-width: calc(100% - 370px);  /* 185px padding on each side */
+    max-width: calc(100% - 370px); 
     text-align: center;
-    margin-top: 0;  /* Removes default top margin to bring it closer to the h1 */
+    margin-top: 0;  
   }
   .Homepage p strong {
     color: #0A6686;
   }
 
 /* Footer Styles */
-/* Footer Styles */
-/* Footer Styles */
 footer {
-    width: calc(100% - 258px);  /* Matches the header's width */
+    width: calc(100% - 258px); 
     margin: 0 auto;
   }
   
   footer hr {
-    border: 2px solid #0A6686;  /* Thicker line with color #0A6686 */
+    border: 2px solid #0A6686; 
     margin-bottom: 20px;
 
   }
@@ -129,23 +136,23 @@ footer {
   
   footer a {
     text-decoration: none;
-    color: #0A6686;  /* Link color */
-    padding: 5px 5px;  /* Added padding around links */
-    display: inline-block;  /* Makes the padding effective */
+    color: #0A6686; 
+    padding: 5px 5px;  
+    display: inline-block; 
   }
   
-  /* Footer link hover styles */
+  
   footer a:hover {
-    background-color: #C7F0FF;  /* Background hover color */
-    color: #2596BE;  /* Text color */
-    border-radius: 5px;  /* Rounded corners */
+    background-color: #C7F0FF;  
+    color: #2596BE;  
+    border-radius: 5px;  
   }
 
-  /* Existing CSS ... */
+  
 
-/* Media Queries for Mobile Responsiveness */
+/* Mobile*/
 @media only screen and (max-width: 768px) {
-  /* Header Styles for Mobile */
+ 
   header {
     flex-direction: column;
     align-items: center;
@@ -168,7 +175,7 @@ footer {
     margin-bottom: 10px;
   }
 
-  /* Homepage Styles for Mobile */
+  
   .Homepage h1 {
     font-size: 36px;
   }
@@ -179,7 +186,7 @@ footer {
     padding: 0 15px;
   }
 
-  /* Footer Styles for Mobile */
+  
   footer {
     width: calc(100% - 30px);
     padding: 0 15px;

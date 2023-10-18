@@ -74,7 +74,7 @@ html, body {
     justify-content: flex-start;
     align-items: flex-start;
     border-radius: 10px;
-    border: 7px outset #0A6686;
+    border: 7px solid #0A6686;
     margin: 0 2.5%; 
     margin-bottom: 10px;
     

@@ -1,205 +1,215 @@
-/* General Styles */
 
+
+/* Reset default margin, padding, and set height to 100% for body and HTML */
 body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Set the default font */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Default font */
 }
 
-
+/* Styles for the homepage container */
 #homepage {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  #homepage header, 
-  #homepage .Homepage, 
-  #homepage footer {
-    flex-shrink: 0;  
-  }
-  
+  display: flex;
+  flex-direction: column;
+}
 
+/* Prevent header, .Homepage, and footer from shrinking in the flex container */
+#homepage header,
+#homepage .Homepage,
+#homepage footer {
+  flex-shrink: 0;
+}
 
-
+/* Header Styles */
 header {
-    background-color: #C7F0FF;
-    border-radius: 75px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;  
-    margin: 0 auto;
-    margin-top: 15px;
-    max-width: 85%;  
-    width: 100%;
-    height: 85px;
-  }
-  
-  
-  /* Logo and Title Alignment */
-  header .logo-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  header img {
-    width: 123px;
-    height: 89px;
-  }
-  
-  header h2 {
-    margin-top: -5px;
-    font-size: 20px;
-    color:#0A6686;
-  }
-  
-  /* Buttons */
-  header ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  header ul li {
-    background-color: #0A6686;
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 15px;
-    cursor: pointer;
-  }
+  background-color: #C7F0FF;
+  border-radius: 75px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 20px 5%;
+  margin: 0 auto;
+  margin-top: 15px; /*space above*/
+  max-width: 85%; /*aligned center but will leave space on either side*/
+  width: 100%;
+  height: 85px;
+}
 
-  header ul li a{
-    background-color: #0A6686;
-    color: #ffffff;
-    text-decoration: none;
-    cursor: pointer;
-  }
+/* Styles for the logo and title alignment within the header */
+header .logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /*align child items left*/
+}
 
-  header ul li:first-child {
-    margin-right: 10px;  
-  }
+/* Styles for the logo image */
+header img {
+  width: 123px;
+  height: 89px;
+}
 
+/* margin and font for the header title (h2) */
+header h2 {
+  margin-top: -5px;
+  font-size: 20px;
+  color: #0A6686;
+}
 
-  
+/* flex container margin and padding for the header buttons */
+header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;/*even horz space*/
+}
 
-/* Homepage Section */
+/* Styles for individual header buttons */
+header ul li {
+  background-color: #0A6686;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 15px;/*rounded edge effect*/
+  cursor: pointer;
+}
+
+/* Styles for header button links */
+header ul li a {
+  background-color: #0A6686;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add margin to the first header button */
+header ul li:first-child {
+  margin-right: 10px;
+}
+
+/* Homepage Section Styles center horz and vert in column fill sourrounding div*/
 .Homepage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1; 
-  }
-  
-  .Homepage h1 {
-    color: #0A6686;
-    font-size: 54px;
-    text-align: center;
-    margin-bottom: 10px; 
-  }
-  
-  .Homepage p {
-    color: #2596BE;
-    font-size: 20px;
-    max-width: calc(100% - 370px); 
-    text-align: center;
-    margin-top: 0;  
-  }
-  .Homepage p strong {
-    color: #0A6686;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+/* Styles for the main heading in the homepage */
+.Homepage h1 {
+  color: #0A6686;
+  font-size: 54px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Color size for paragraph text in the homepage */
+.Homepage p {
+  color: #2596BE;
+  font-size: 20px;
+  max-width: calc(100% - 370px);
+  text-align: center;
+  margin-top: 0;
+}
+
+/* Styles for strong text within paragraphs */
+.Homepage p strong {
+  color: #0A6686;
+}
 
 /* Footer Styles */
 footer {
-    width: calc(100% - 258px); 
-    margin: 0 auto;
-  }
-  
-  footer hr {
-    border: 2px solid #0A6686; 
-    margin-bottom: 20px;
-
-  }
-  
-  .footer-links {
-    font: bold;
-    margin-bottom: 20px;
-    font-size: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  footer a {
-    text-decoration: none;
-    color: #0A6686; 
-    padding: 5px 5px;  
-    display: inline-block; 
-  }
-  
-  
-  footer a:hover {
-    background-color: #C7F0FF;  
-    color: #2596BE;  
-    border-radius: 5px;  
-  }
-
-  
-
-/* Mobile*/
-@media only screen and (max-width: 768px) {
- 
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-    height: auto;
-  }
-
-  header .logo-container {
-    align-items: center;
-    margin-bottom: 15px;
-  }
-
-  header ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  header ul li:first-child {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-
-  
-  .Homepage h1 {
-    font-size: 36px;
-  }
-
-  .Homepage p {
-    font-size: 18px;
-    max-width: calc(100% - 30px);
-    padding: 0 15px;
-  }
-
-  
-  footer {
-    width: calc(100% - 30px);
-    padding: 0 15px;
-  }
-
-  .footer-links {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  footer a {
-    margin-bottom: 10px;
-  }
+  width: calc(100% - 258px);
+  margin: 0 auto;
 }
 
+/* Styles for the horizontal line in the footer */
+footer hr {
+  border: 2px solid #0A6686;
+  margin-bottom: 20px;
+}
+
+/* Styles for footer links container even space at the bottom */
+.footer-links {
+  font: bold;
+  margin-bottom: 20px;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styles for individual footer links */
+footer a {
+  text-decoration: none;
+  color: #0A6686;
+  padding: 5px 5px;
+  display: inline-block;
+}
+
+/* Hover styles for footer links */
+footer a:hover {
+  background-color: #C7F0FF;
+  color: #2596BE;
+  border-radius: 5px;
+}
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 768px) {
+  /* Adjust header styles for mobile */
+  header {
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+      height: auto;
+  }
+
+  /* Adjust logo container styles   */
+  header .logo-container {
+      align-items: center;
+      margin-bottom: 15px;
+  }
+
+  /* Adjust header button styles   */
+  header ul {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  /* Remove margin from the first header button and add margin to bottom */
+  header ul li:first-child {
+      margin-right: 0;
+      margin-bottom: 10px;
+  }
+
+  /* Adjust font size   */
+  .Homepage h1 {
+      font-size: 36px;
+  }
+
+  /* Adjust paragraph text styles   */
+  .Homepage p {
+      font-size: 18px;
+      max-width: calc(100% - 30px);
+      padding: 0 15px;
+  }
+
+  /* Adjust footer styles   */
+  footer {
+      width: calc(100% - 30px);
+      padding: 0 15px;
+  }
+
+  /* Adjust footer links container styles*/
+  .footer-links {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  /* Add margin to footer links  */
+  footer a {
+      margin-bottom: 10px;
+  }
+}
 

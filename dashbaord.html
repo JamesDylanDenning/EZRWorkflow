@@ -52,17 +52,18 @@
             <div class="task-buttons"> <!-- New container for grid -->
 
               <ul>
-              <li><a href="#overlayForm" id="addTaskBtn">Add Task</a>
+              <li>
+                <a href="#overlayForm" id="addTaskBtn">Add Task</a>
 
                 <div id="overlayForm" class="overlay">
                   <div class="form-container">
                     <a href="#" class="closeBtn"></a> <!-- Moved inside form-container -->
                     <form id="mainForm">
-                      <input type="text" id="task-name" placeholder="Task Name">
-                      <input type="text" id="description" placeholder="Description">
-                      <input type="date" id="calendar">
-                      <button id="addFieldBtn">+</button> <!-- Moved inside form, between calendar and submit -->
-                      <input type="submit" value="Submit">
+                      <input type="text" id="task-name" placeholder="Task Name"  aria-label="Task name Field">
+                      <input type="text" id="description" placeholder="Description"  aria-label="Task Description Field">
+                      <input type="date" id="calendar"  aria-label="Enter Date Field"">
+                      <button id="addFieldBtn"  aria-label="Add Field Button">+</button> <!-- Moved inside form, between calendar and submit -->
+                      <input type="submit" value="Submit"  aria-label="Submit Button">
                     </form>
                   </div>
                 </div>
@@ -72,11 +73,12 @@
                   <div class="form-container">
                     <a href="#" class="closeBtn"></a>  
                     <form id="fieldTypeForm">
-                      <input type="text" id="new-field-type" placeholder="Enter Field Type">
-                      <input type="submit" value="Add Field">
+                      <input type="text" id="new-field-type" placeholder="Enter Field Type"  aria-label="Enter New Value Field">
+                      <input type="submit" value="Add Field"  aria-label="Sumbit New Value Field">
                     </form>
                   </div>
-                </div></li>
+                </div>
+              </li>
               <li>Teams</li>
               <li>All Tasks</li>
               <li>Settings</li>

@@ -8,7 +8,7 @@ body, html {
   }
     /* Hides scroll bar*/
 
-  ::-webkit-scrollbar {
+  body ::-webkit-scrollbar {
     display: none;
   }
   
@@ -81,7 +81,7 @@ body, html {
 
 
 .tasks ul li {
-  background-color: #2596BE;
+  background-color: #0A6686;
   color: #ffffff;
   padding: 10px 20px;
   border-radius: 15px;
@@ -299,7 +299,7 @@ body, html {
     font-size: 24px; 
     font-weight: bold; 
     margin-bottom: 10px; 
-    color: #2596BE; 
+    color: #0A6686; 
   }
 
 
@@ -400,6 +400,7 @@ body, html {
 .info h2, .info p {
     margin-top: 10px; 
     margin-bottom: 5px; 
+    color: #0A6686;
 }
 
 
@@ -441,7 +442,7 @@ body, html {
   .day-number {
     cursor: pointer;
     transition: background-color 0.3s ease;
-    color: #2596BE;
+    color: #0A6686;
   }
   
   .day-number:hover {
@@ -519,6 +520,7 @@ body, html {
 
     .calendar {
       width: 100%;
+      
     }
     .tasks .task-buttons ul {
       grid-template-columns: 1fr;  

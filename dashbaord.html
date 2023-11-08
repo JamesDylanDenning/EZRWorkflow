@@ -28,11 +28,11 @@
 <body >
     <header>
         <div class="logo-container">
-          <a href="index.html"><img src="Images/Logo.png" width="136" height="99" alt="Logo" ></a>
+          <a href="index.html"><img src="Images/Logo.png"  width="136" height="99" alt="EZR Workflow Logo image" ></a>
           <h2>EZR Workflow</h2>
         </div>
-        <div class="myDashboard"><h3>My Dashboard</h3>
-        </div>
+        <h3>My Dashboard</h3>
+      
         <ul>
           <li>My Profile</li>  
         </ul>
@@ -59,11 +59,11 @@
                   <div class="form-container">
                     <a href="#" class="closeBtn"></a> <!-- Moved inside form-container -->
                     <form id="mainForm">
-                      <input type="text" id="task-name" placeholder="Task Name"  aria-label="Task name Field">
-                      <input type="text" id="description" placeholder="Description"  aria-label="Task Description Field">
-                      <input type="date" id="calendar"  aria-label="Enter Date Field"">
+                      <input name="input1" type="text" id="task-name" placeholder="Task Name"  aria-label="Task name Field">
+                      <input name="input2" type="text" id="description" placeholder="Description"  aria-label="Task Description Field">
+                      <input name="input3" type="date" id="calendar"  aria-label="Enter Date Field"">
                       <button id="addFieldBtn"  aria-label="Add Field Button">+</button> <!-- Moved inside form, between calendar and submit -->
-                      <input type="submit" value="Submit"  aria-label="Submit Button">
+                      <input name="input4" type="submit" value="Submit"  aria-label="Submit Button">
                     </form>
                   </div>
                 </div>
@@ -241,5 +241,3 @@
 </body>  
 
 
-
-</html>
